@@ -1,0 +1,9 @@
+node_modules/
+backend/node/node_modules/
+frontend/product_management/node_modules/
+
+.env
+backend/node/.env
+frontend/product_management/.env
+
+frontend/product_management/build/
