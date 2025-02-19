@@ -61,22 +61,19 @@ const ShowProducts = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="productModalLabel">
-                  {selectedProduct.name} Details
+                  {selectedProduct.name} Barcode
                 </h5>
                 <button
                   type="button"
                   className="btn-close"
                   data-bs-dismiss="modal"
+                 
                   aria-label="Close"
                   onClick={closeModal}
                 ></button>
               </div>
               <div className="modal-body">
-                <p><strong>Price:</strong> {selectedProduct.price}</p>
                 <p><strong>Barcode:</strong> {selectedProduct.barcode}</p>
-                <p><strong>Vendor Name:</strong> {selectedProduct.vendor.name}</p>
-                <p><strong>Vendor Address:</strong> {selectedProduct.vendor.address}</p>
-                <p><strong>Vendor Phone:</strong> {selectedProduct.vendor.phone}</p>
               </div>
               <div className="modal-footer">
                 <button
