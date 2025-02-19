@@ -70,42 +70,150 @@ body {
 }
 
 
-/* AddProduct.css */
-/* App.css */
+
+
+
+
+.product-label {
+  border: 1px solid #000;
+  text-align: center;
+  page-break-after: always;
+  width: 196px;
+  height: 93px;
+  padding: 3px;
+  padding: 0 auto;
+
+
+}
+
+.shop-name {
+  font-size: 8px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.shop-address {
+  font-size: 6px;
+  margin: 0;
+  font-weight: bolder;
+}
+
+
+.product-details {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin-top: 0;
+  font-size: 14px;
+
+}
+
+.main-section {
+  position: absolute;
+  top: 50px;
+  right: 33px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.product-price {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+}
+
+.barcode svg {
+  width: 100% !important;
+  height: 35px !important;
+}
+
+.barcode-display text {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+
+
+
 @media print {
-  body * {
-    visibility: hidden; /* Hide everything by default */
+  @page {
+    size: 196px 93px;
+    margin: 0;
   }
+
+  body * {
+    visibility: hidden;
+  }
+
   #print-section,
   #print-section * {
-    visibility: visible; /* Show only the print section */
+    visibility: visible;
   }
+
   #print-section {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    text-align: center; /* Center-align all text */
+    width: 196px;
+    height: 93px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
   }
-  #print-section h4 {
-    font-size: 24px;
-    margin-bottom: 10px;
+
+  .shop-name {
+    font-size: 10px;
+    font-weight: bolder;
+    margin: 0;
+    line-height: 1;
   }
-  #print-section p {
-    font-size: 18px;
-    margin: 5px 0;
+
+  .shop-address {
+    font-size: 8px;
+    line-height: 1;
+    font-weight: bolder;
   }
-  #print-section hr {
-    margin: 10px 0;
+
+  .product-details {
+    font-weight: bolder;
+    font-size: 10px;
   }
+
+  .main-section {
+    position: absolute;
+    top: 35px;
+    right: 33px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .product-price {
+    font-size: 12px;
+    font-weight: bolder;
+
+  }
+
+  .barcode svg {
+    width: 100% !important;
+    height: 35px !important;
+  }
+
+  .barcode-display text {
+    font-size: 12px;
+    font-weight: bolder;
+  }
+
   .print-page-break {
-    page-break-after: always; /* Ensures each label is printed on a new page */
+    page-break-after: always;
   }
+
   .print-section {
-    display: block !important; /* Show only during printing */
+    display: block !important;
   }
 }
 
 .print-section {
-  display: none; /* Hide in normal UI */
+  display: none;
 }

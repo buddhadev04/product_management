@@ -14,8 +14,8 @@ import ShowVendors from './components/ShowVendors';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
-      <Route path='' element={<ShowProducts/>}/>
-      <Route path='see/vendors' element={<ShowVendors/>}/>
+      <Route path='' element={<ShowVendors/>}/>
+      <Route path='/see/products' element={<ShowProducts/>}/>
       <Route path='add/vendor' element={<AddVendor/>}/>
       <Route path='add' element={<AddProduct/>}/>
       <Route path='get' element={<GetProductByBarcode/>}/>

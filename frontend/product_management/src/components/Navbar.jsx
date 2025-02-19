@@ -23,20 +23,12 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
+          <li className="nav-item">
               <Link
                 className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
                 to="/"
               >
-                All
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${location.pathname === "/see/vendors" ? "active" : ""}`}
-                to="/see/vendors"
-              >
-                See Vendors
+                All Vendors
               </Link>
             </li>
             <li className="nav-item"> 
@@ -46,6 +38,15 @@ const Navbar = () => {
                   Add Vendor
               </Link>
             </li>
+            {/* <li className="nav-item">
+              <Link
+                className={`nav-link ${location.pathname === "/see/product" ? "active" : ""}`}
+                to="/see/products"
+              >
+                All Products
+              </Link>
+            </li> */}
+            
             <li className="nav-item">
               <Link
                 className={`nav-link ${location.pathname === "/add" ? "active" : ""}`}
