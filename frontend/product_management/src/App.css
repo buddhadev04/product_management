@@ -70,42 +70,133 @@ body {
 }
 
 
-/* AddProduct.css */
-/* App.css */
+
+
+.product-label {
+  padding: 8px; /* Added padding */
+  border: 1px solid #000;
+  text-align: center;
+  width: 1.8in;
+  background: #fff;
+  page-break-after: always;
+  margin: 0 auto;
+}
+
+.shop-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+}
+
+.shop-address {
+  font-size: 11px;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+}
+
+.label-divider {
+  margin: 4px 0;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.product-price {
+  font-size: 22px; /* Increased MRP size */
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+/* Barcode styling */
+.barcode {
+  margin-top: 6px;
+}
+
+/* Print-specific styles */
 @media print {
-  body * {
-    visibility: hidden; /* Hide everything by default */
+  @page {
+    size: 2in 1in; /* Reduced label size */
+    margin: 0;
   }
+
+  body * {
+    visibility: hidden;
+  }
+
   #print-section,
   #print-section * {
-    visibility: visible; /* Show only the print section */
+    visibility: visible;
   }
+
   #print-section {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    text-align: center; /* Center-align all text */
+    width: 1.8in;
+    height: 0.9in;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3px; /* Added padding */
+    font-family: "Roboto Slab", serif;
+    margin: 0 auto;
   }
-  #print-section h4 {
-    font-size: 24px;
-    margin-bottom: 10px;
+
+  .shop-name {
+    font-size: 7px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
   }
-  #print-section p {
-    font-size: 18px;
-    margin: 5px 0;
+
+  .shop-address {
+    font-size: 5px;
+    margin: 0.5px 0;
+    line-height: 1;
   }
-  #print-section hr {
-    margin: 10px 0;
+
+  .label-divider {
+    margin: 0.5px 0;
+    border: 0.3px solid #000;
   }
+
+  .product-details {
+    font-size: 5px;
+    margin: 0.5px 0;
+  }
+
+  .product-price {
+    font-size: 8px; /* Increased MRP size */
+    margin: 0.5px 0;
+    font-weight: bold;
+  }
+
+  .barcode {
+    margin-top: 2px;
+  }
+
+  .barcode svg {
+    width: 100% !important;
+    height: 20px !important; /* Increased barcode height */
+  }
+
+  .barcode text {
+    font-size: 12px !important;
+  }
+
   .print-page-break {
-    page-break-after: always; /* Ensures each label is printed on a new page */
+    page-break-after: always;
   }
+
   .print-section {
-    display: block !important; /* Show only during printing */
+    display: block !important;
   }
 }
 
 .print-section {
-  display: none; /* Hide in normal UI */
+  display: none;
 }

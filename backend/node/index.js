@@ -7,7 +7,6 @@ const app = express();
 dotenv.config()
 url = process.env.DB_CONNECTION_URL
 port = process.env.PORT
-console.log(url)
 mongoose.connect(url)
 .then(() => console.log('Mongodb Connected Successfully'))
 .catch((err) => console.log("Connection Error", err))
