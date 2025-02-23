@@ -1,6 +1,27 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:8000"; // Update to your backend URL
+const baseURL = "http://localhost:8000";
+
+
+export const signUp = async (userData) => {
+  try {
+    const response = await axios.post(`${baseURL}/signup`, userData);
+    return response.data.message;
+  } catch (err) {
+    console.error("Error signing up:", err.response?.data || err.message);
+    return "Error signing up.";
+  }
+};
+
+export const signIn = async (userData) => {
+  try {
+    const response = await axios.post(`${baseURL}/signin`, userData);
+    return response.data;
+  } catch (err) {
+    console.error("Error signing in:", err.response?.data || err.message);
+    return { error: "Error signing in" };
+  }
+};
 
 export const fetchProducts = async () => {
   try {
