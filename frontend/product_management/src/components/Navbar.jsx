@@ -29,7 +29,7 @@ const Navbar = () => {
             <li className="nav-item"><Link className={`nav-link ${location.pathname === "/add" ? "active" : ""}`} to="/add">Add Product</Link></li>
             <li className="nav-item"><Link className={`nav-link ${location.pathname === "/get" ? "active" : ""}`} to="/get">Get Product</Link></li>
             <li className="nav-item"><Link className={`nav-link ${location.pathname === "/update" ? "active" : ""}`} to="/update">Update</Link></li>
-            <li className="nav-item"><button className="btn btn-danger" onClick={() => { localStorage.removeItem("token"); window.location.href = "/signin"; }}>Logout</button></li>
+            <li className="nav-item"><button className="btn btn-danger" onClick={() => { localStorage.removeItem("token"); window.location.href = "/"; }}>Logout</button></li>
           </ul>
         </div>
       </div>
