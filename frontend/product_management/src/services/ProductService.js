@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:8000";
+const baseURL = process.env.REACT_APP_BASE_URL || "https://product-management-lxrm.onrender.com"; 
 
 
 export const signUp = async (userData) => {
