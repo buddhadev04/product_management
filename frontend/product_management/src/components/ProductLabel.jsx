@@ -6,7 +6,7 @@ const ProductLabel = ({ product, shopName, shopAddress }) => {
   return (
     <div id="print-section" className="product-label">
       <h2 className="shop-name">{shopName}</h2>
-      <p className="shop-address">{shopAddress}</p>
+      {/* <p className="shop-address">{shopAddress}</p> */}
       <div className="product-details">
         <p>Discount: {product.discount}%</p>
         <p>Size: {product.size}</p>
@@ -15,7 +15,7 @@ const ProductLabel = ({ product, shopName, shopAddress }) => {
         <p className="product-price">MRP: {product.sellPrice}/-</p>
         <div className="barcode">
           {product.barcode ? (
-            <Barcode value={product.barcode} format="CODE128" width={4} height={65} displayValue className="barcode-display" />
+            <Barcode value={product.barcode} format="CODE128" width={2} height={30} displayValue className="barcode-display" />
           ) : (
             <p>No Barcode</p>
           )}
