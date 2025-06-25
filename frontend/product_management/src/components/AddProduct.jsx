@@ -120,17 +120,6 @@ const AddProduct = () => {
                 </div>
 
                 <div className="mb-3">
-                  <label className="form-label fs-5 fw-bold">Sell Price</label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    value={newProduct.sellPrice}
-                    onChange={(e) => setNewProduct({ ...newProduct, sellPrice: Number(e.target.value) })}
-                    placeholder="Enter sell price"
-                  />
-                </div>
-
-                <div className="mb-3">
                   <label className="form-label fs-5 fw-bold">Purchase Price</label>
                   <input
                     type="number"
@@ -138,6 +127,17 @@ const AddProduct = () => {
                     value={newProduct.purchasePrice}
                     onChange={(e) => setNewProduct({ ...newProduct, purchasePrice: Number(e.target.value) })}
                     placeholder="Enter purchase price"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label fs-5 fw-bold">Sell Price</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={newProduct.sellPrice}
+                    onChange={(e) => setNewProduct({ ...newProduct, sellPrice: Number(e.target.value) })}
+                    placeholder="Enter sell price"
                   />
                 </div>
 
