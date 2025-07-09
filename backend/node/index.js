@@ -13,6 +13,8 @@ mongoose.connect(url)
 .catch((err) => console.log("Connection Error", err))
 
 app.use(express.json());
+let frontendUrl = 'https://ujjwal-dresses.onrender.com';
+app.use(cors({ origin: frontendUrl }));
 app.use(cors());
 app.use(productRouter);
 app.use(authRouter);
