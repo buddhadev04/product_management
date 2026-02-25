@@ -108,9 +108,17 @@ class ProdcutController {
             res.status(201).json({ message: "Product created successfully", product });
         }
         catch (err) {
-            console.error("Error creating product:", err);
-            res.status(400).json({ error: "Error Creating Product", details: err.message });
-        }
+            if (err.code === 11000) {
+                return res.status(400).json({
+                    error: "Duplicate barcode generated. Please retry."
+                });
+            }
+
+            return res.status(500).json({
+                error: "Error Creating Product",
+                details: err.message
+            });
+            }
     }
     
 

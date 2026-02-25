@@ -24,5 +24,6 @@ const productSchema = mongoose.Schema({
     vendor: { type: mongoose.Schema.Types.ObjectId, ref: "Vendor" },
 })
 
+productSchema.index({ barcode: 1 }, { unique: true });
 const productInfo = mongoose.model('productsDetails', productSchema);
 module.exports = productInfo;
