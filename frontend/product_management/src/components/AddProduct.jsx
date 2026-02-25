@@ -18,6 +18,7 @@ const AddProduct = () => {
   const [productCount, setProductCount] = useState(1); // Counter for multiple products
   const [submittedProducts, setSubmittedProducts] = useState([]); // Store multiple products
   const [vendors, setVendors] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const shopName = "UJJWAL DRESSES";
   const shopAddress = "DUBRAJPUR, BASAKPARA, BIRBHUM";
@@ -26,17 +27,6 @@ const AddProduct = () => {
     return Math.floor(10000000 + Math.random() * 90000000).toString();
   };
 
-  const checkAndGenerateBarcode = async () => {
-    let barcode = generateBarcode();
-    let product = await fetchProductByBarcode(barcode);
-
-    while (product) {
-      barcode = generateBarcode();
-      product = await fetchProductByBarcode(barcode);
-    }
-
-    return barcode;
-  };
 
   useEffect(() => {
     const getVendors = async () => {
@@ -58,11 +48,12 @@ const AddProduct = () => {
       return;
     }
 
+    setLoading(true);
     try {
       const createdProducts = [];
 
       for (let i = 0; i < productCount; i++) {
-        const barcode = await checkAndGenerateBarcode();
+        const barcode = generateBarcode();
         const productData = { ...newProduct, barcode };
 
         console.log("Submitting Product:", productData);
@@ -87,6 +78,7 @@ const AddProduct = () => {
       console.error("Error adding product:", error);
       SwalAlert("error", "Error", "Failed to add product.");
     }
+      setLoading(false);
   };
 
   const contentRef = useRef(null);
@@ -196,8 +188,15 @@ const AddProduct = () => {
 
             {/* Submit Button */}
             <div className="text-center mt-4">
-              <button type="submit" className="btn btn-success fw-bold w-50">
-                Add Product
+              <button type="submit" className="btn btn-success fw-bold w-50" disabled={loading}>
+                {loading ? (
+                  <>
+                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Adding...
+                  </>
+                ) : (
+                  "Add Product"
+                )}
               </button>
             </div>
           </form>
